@@ -1,4 +1,5 @@
 import 'package:clock_painter/components/card_component.dart';
+import 'package:clock_painter/components/page_presentation_component.dart';
 import 'package:clock_painter/pages/polygon_examples/examples/polygon_example_one_page.dart';
 import 'package:flutter/material.dart';
     
@@ -8,32 +9,14 @@ class PolygonExamplesPage extends StatelessWidget {
   
     @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Polygons'),
-      ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          children: _buildCardsPage().map((e) {
-            return Padding(
-              padding: const EdgeInsets.only(
-                bottom: 16,
-              ),
-              child: e,
-            );
-          }).toList(),
+    return const PagePresentationComponent(
+      title: "Polygons", 
+      cards: [
+        CardComponent(
+          label: "Exemplo 1", 
+          page: PolygonExampleOnePage(),
         ),
-      ),
+      ],
     );
-  }
-
-  List<Widget> _buildCardsPage() {
-    return const [
-      CardComponent(
-        label: "Exemplo 1", 
-        page: PolygonExampleOnePage(),
-      ),
-    ];
   }
 }
