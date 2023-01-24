@@ -10,9 +10,12 @@ class LineExampleFourPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Lines Example 3'),
       ),
-      body: CustomPaint(
-        painter: _ShapePainter(),
-        child: Container(),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: CustomPaint(
+          painter: _ShapePainter(),
+          child: Container(),
+        ),
       ),
     );
   }
@@ -31,9 +34,10 @@ class _ShapePainter extends CustomPainter {
 
     final path = Path();
     path.moveTo(size.width / 2, 0);
-    path.lineTo(0, size.height / 2);
-    path.lineTo(size.width / 2, size.height);
-    path.lineTo(size.width, size.height / 2);
+    path.lineTo(0, size.height);
+    path.lineTo(size.width, size.height * 0.30);
+    path.lineTo(0, size.height * 0.30);
+    path.lineTo(size.width, size.height);
     path.lineTo(size.width / 2, 0);
     
     canvas.drawPath(path, paint);
