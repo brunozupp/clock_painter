@@ -8,7 +8,7 @@ class LineExampleFourPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Lines Example 3'),
+        title: const Text('Lines Example 4'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

@@ -1,5 +1,6 @@
 import 'package:clock_painter/components/card_component.dart';
 import 'package:clock_painter/components/page_presentation_component.dart';
+import 'package:clock_painter/pages/line_examples/examples/line_example_five_page.dart';
 import 'package:clock_painter/pages/line_examples/examples/line_example_four_page.dart';
 import 'package:clock_painter/pages/line_examples/examples/line_example_one_page.dart';
 import 'package:clock_painter/pages/line_examples/examples/line_example_three_page.dart';
@@ -30,6 +31,10 @@ class LineExamplesPage extends StatelessWidget {
         CardComponent(
           label: "Exemplo 4", 
           page: LineExampleFourPage(),
+        ),
+        CardComponent(
+          label: "Exemplo 5", 
+          page: LineExampleFivePage(),
         ),
       ],
     );
