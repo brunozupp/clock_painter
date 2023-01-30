@@ -1,10 +1,10 @@
-class ClockTimeModel {
+class ClockOneTimeModel {
   
   final int sec;
   final int min;
   final int hour;
 
-  ClockTimeModel({
+  ClockOneTimeModel({
     required this.sec,
     required this.min,
     required this.hour,

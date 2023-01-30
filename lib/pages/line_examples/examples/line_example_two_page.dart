@@ -32,6 +32,9 @@ class _ShapePainter extends CustomPainter {
     final path = Path();
     path.moveTo(0, size.height / 2);
     path.lineTo(size.width, size.height / 2);
+    path.lineTo(0, size.height);
+    path.lineTo(size.width, 0);
+    path.lineTo(0, size.height / 2);
     
     canvas.drawPath(path, paint);
   }

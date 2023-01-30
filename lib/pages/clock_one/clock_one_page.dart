@@ -1,12 +1,12 @@
-import 'package:clock_painter/pages/clock/ui/clock_styles.dart';
-import 'package:clock_painter/pages/clock/utils/clock_time_model.dart';
-import 'package:clock_painter/pages/clock/widgets/clock_widget.dart';
+import 'package:clock_painter/pages/clock_one/ui/clock_one_styles.dart';
+import 'package:clock_painter/pages/clock_one/utils/clock_one_time_model.dart';
+import 'package:clock_painter/pages/clock_one/widgets/clock_one_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:timer_builder/timer_builder.dart';
     
-class ClockPage extends StatelessWidget {
+class ClockOnePage extends StatelessWidget {
 
-  const ClockPage({ Key? key }) : super(key: key);
+  const ClockOnePage({ Key? key }) : super(key: key);
   
   @override
   Widget build(BuildContext context) {
@@ -38,17 +38,17 @@ class ClockPage extends StatelessWidget {
                         children: [
                           const Text(
                             "Today",
-                            style: ClockStyle.mainTextThin,
+                            style: ClockOneStyle.mainTextThin,
                           ),
                           Text(
                             "$hours:$minutes:$seconds",
-                            style: ClockStyle.mainText,
+                            style: ClockOneStyle.mainText,
                           ),
                         ],
                       ),
                       Center(
-                        child: ClockWidget(
-                          time: ClockTimeModel(
+                        child: ClockOneWidget(
+                          time: ClockOneTimeModel(
                             hour: date.hour,
                             min: date.minute,
                             sec: date.second,
@@ -89,7 +89,7 @@ class ClockPage extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     padding: const EdgeInsets.all(24),
                     decoration: BoxDecoration(
-                      color: ClockStyle.primaryColor,
+                      color: ClockOneStyle.primaryColor,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Column(
@@ -100,11 +100,11 @@ class ClockPage extends StatelessWidget {
                           children: [
                             const Text(
                               "Bei jin",
-                              style: ClockStyle.mainTextWhite,
+                              style: ClockOneStyle.mainTextWhite,
                             ),
                             Text(
                               "${DateTime.now().hour}:${DateTime.now().minute}",
-                              style: ClockStyle.mainTextWhite,
+                              style: ClockOneStyle.mainTextWhite,
                             ),
                           ],
                         ),
@@ -115,7 +115,7 @@ class ClockPage extends StatelessWidget {
 
                         const Text(
                           "Today",
-                          style: ClockStyle.mainTextThinWhite,
+                          style: ClockOneStyle.mainTextThinWhite,
                         )
                       ],
                     ),

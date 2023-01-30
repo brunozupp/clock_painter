@@ -2,14 +2,14 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import 'package:clock_painter/pages/clock/ui/clock_styles.dart';
-import 'package:clock_painter/pages/clock/utils/clock_time_model.dart';
+import 'package:clock_painter/pages/clock_one/ui/clock_one_styles.dart';
+import 'package:clock_painter/pages/clock_one/utils/clock_one_time_model.dart';
 
-class ClockPainter extends CustomPainter {
+class ClockOnePainter extends CustomPainter {
 
-  final ClockTimeModel time;
+  final ClockOneTimeModel time;
 
-  ClockPainter({
+  ClockOnePainter({
     required this.time,
   });
 
@@ -47,7 +47,7 @@ class ClockPainter extends CustomPainter {
     );
 
     final fillBrush = Paint()
-      ..color = ClockStyle.primaryColor
+      ..color = ClockOneStyle.primaryColor
       ..strokeCap = StrokeCap.round;
 
     final centerDotBrush = Paint()
