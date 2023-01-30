@@ -1,6 +1,7 @@
 import 'package:clock_painter/components/card_component.dart';
 import 'package:clock_painter/pages/circle_examples/circle_examples_page.dart';
 import 'package:clock_painter/pages/clock_one/clock_one_page.dart';
+import 'package:clock_painter/pages/clock_two/clock_two_page.dart';
 import 'package:clock_painter/pages/line_examples/line_examples_page.dart';
 import 'package:clock_painter/pages/polygon_examples/polygon_examples_page.dart';
 import 'package:flutter/material.dart';
@@ -46,8 +47,12 @@ class HomePage extends StatelessWidget {
         page: PolygonExamplesPage(),
       ),
       CardComponent(
-        label: "Clock", 
+        label: "Clock One", 
         page: ClockOnePage(),
+      ),
+      CardComponent(
+        label: "Clock Two", 
+        page: ClockTwoPage(),
       ),
     ];
   }
