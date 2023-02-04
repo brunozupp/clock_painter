@@ -69,6 +69,9 @@ class ClockTwoPainter extends CustomPainter {
 
     // Esse 80 = Distance you want the coordinate that you have to provide
     // Pode-se dizer que esse 80 é o radius que vai ser aplicado para o tamanho da seta
+    // Está multiplicando com o minuto junto pois dessa forma não vai aumentar a hora
+    // apenas quando passar de hora em hora, mas vai mudando o indicador regularmente
+    // a cada minuto que vai passando, igual acontece com um relógio real.
     final hourHandX = centerX + 50 * cos((date.hour * 30 + date.minute * 0.5) * pi / 180);
     final hourHandY = centerY + 50 * sin((date.hour * 30 + date.minute * 0.5) * pi / 180);
     canvas.drawLine(center, Offset(hourHandX,hourHandY), hourHandBrush);
