@@ -1,4 +1,4 @@
-import 'package:clock_painter/pages/clock_two/widgets/clock_two_widget.dart';
+import 'package:clock_painter/pages/clock_examples/clock_two/widgets/clock_two_widget.dart';
 import 'package:flutter/material.dart';
 
 class ClockTwoPage extends StatelessWidget {

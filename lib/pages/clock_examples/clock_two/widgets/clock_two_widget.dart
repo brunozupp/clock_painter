@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:math';
 
-import 'package:clock_painter/pages/clock_two/painters/clock_two_painter.dart';
+import 'package:clock_painter/pages/clock_examples/clock_two/painters/clock_two_painter.dart';
 import 'package:flutter/material.dart';
 
 class ClockTwoWidget extends StatefulWidget {

@@ -1,6 +1,6 @@
-import 'package:clock_painter/pages/clock_one/ui/clock_one_styles.dart';
-import 'package:clock_painter/pages/clock_one/utils/clock_one_time_model.dart';
-import 'package:clock_painter/pages/clock_one/widgets/clock_one_widget.dart';
+import 'package:clock_painter/pages/clock_examples/clock_one/ui/clock_one_styles.dart';
+import 'package:clock_painter/pages/clock_examples/clock_one/utils/clock_one_time_model.dart';
+import 'package:clock_painter/pages/clock_examples/clock_one/widgets/clock_one_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:timer_builder/timer_builder.dart';
     
