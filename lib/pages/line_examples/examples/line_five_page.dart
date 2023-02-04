@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
     
-class LineExampleFivePage extends StatelessWidget {
+class LineFivePage extends StatelessWidget {
 
-  const LineExampleFivePage({ Key? key }) : super(key: key);
+  const LineFivePage({ Key? key }) : super(key: key);
   
   @override
   Widget build(BuildContext context) {

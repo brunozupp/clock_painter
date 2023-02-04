@@ -2,9 +2,9 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
   
-class PolygonExampleOnePage extends StatelessWidget {
+class PolygonOnePage extends StatelessWidget {
 
-  const PolygonExampleOnePage({ Key? key }) : super(key: key);
+  const PolygonOnePage({ Key? key }) : super(key: key);
   
   @override
   Widget build(BuildContext context) {

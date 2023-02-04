@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
     
-class CircleExampleTwoPage extends StatelessWidget {
+class LineOnePage extends StatelessWidget {
 
-  const CircleExampleTwoPage({ Key? key }) : super(key: key);
+  const LineOnePage({ Key? key }) : super(key: key);
   
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Circle Example 2'),
+        title: const Text('Lines Example 1'),
       ),
       body: CustomPaint(
         painter: _ShapePainter(),
@@ -26,17 +26,12 @@ class _ShapePainter extends CustomPainter {
     final paint = Paint()
       ..color = Colors.teal
       ..strokeWidth = 5
-      ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 
-    final path = Path();
+    Offset startingPoint = Offset(0, size.height / 2);
+    Offset endingPoint = Offset(size.width, size.height / 2);
 
-    path.addOval(Rect.fromCircle(
-      center: Offset(size.width / 2, size.height / 2), 
-      radius: 100,
-    ));
-
-    canvas.drawPath(path, paint);
+    canvas.drawLine(startingPoint, endingPoint, paint);
   }
 
   @override

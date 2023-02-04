@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
     
-class LineExampleTwoPage extends StatelessWidget {
+class LineThreePage extends StatelessWidget {
 
-  const LineExampleTwoPage({ Key? key }) : super(key: key);
+  const LineThreePage({ Key? key }) : super(key: key);
   
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Lines Example 2'),
+        title: const Text('Lines Example 3'),
       ),
       body: CustomPaint(
         painter: _ShapePainter(),
@@ -30,11 +30,11 @@ class _ShapePainter extends CustomPainter {
       ..strokeCap = StrokeCap.round;
 
     final path = Path();
-    path.moveTo(0, size.height / 2);
-    path.lineTo(size.width, size.height / 2);
-    path.lineTo(0, size.height);
-    path.lineTo(size.width, 0);
+    path.moveTo(size.width / 2, 0);
     path.lineTo(0, size.height / 2);
+    path.lineTo(size.width / 2, size.height);
+    path.lineTo(size.width, size.height / 2);
+    path.lineTo(size.width / 2, 0);
     
     canvas.drawPath(path, paint);
   }

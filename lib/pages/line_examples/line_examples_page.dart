@@ -1,11 +1,11 @@
 import 'package:clock_painter/components/card_component.dart';
 import 'package:clock_painter/components/page_presentation_component.dart';
-import 'package:clock_painter/pages/line_examples/examples/line_example_five_page.dart';
-import 'package:clock_painter/pages/line_examples/examples/line_example_four_page.dart';
-import 'package:clock_painter/pages/line_examples/examples/line_example_one_page.dart';
-import 'package:clock_painter/pages/line_examples/examples/line_example_six_page.dart';
-import 'package:clock_painter/pages/line_examples/examples/line_example_three_page.dart';
-import 'package:clock_painter/pages/line_examples/examples/line_example_two_page.dart';
+import 'package:clock_painter/pages/line_examples/examples/line_five_page.dart';
+import 'package:clock_painter/pages/line_examples/examples/line_four_page.dart';
+import 'package:clock_painter/pages/line_examples/examples/line_one_page.dart';
+import 'package:clock_painter/pages/line_examples/examples/line_six_page.dart';
+import 'package:clock_painter/pages/line_examples/examples/line_three_page.dart';
+import 'package:clock_painter/pages/line_examples/examples/line_two_page.dart';
 import 'package:flutter/material.dart';
     
 class LineExamplesPage extends StatelessWidget {
@@ -19,27 +19,27 @@ class LineExamplesPage extends StatelessWidget {
       cards: [
         CardComponent(
           label: "Exemplo 1", 
-          page: LineExampleOnePage(),
+          page: LineOnePage(),
         ),
         CardComponent(
           label: "Exemplo 2", 
-          page: LineExampleTwoPage(),
+          page: LineTwoPage(),
         ),
         CardComponent(
           label: "Exemplo 3", 
-          page: LineExampleThreePage(),
+          page: LineThreePage(),
         ),
         CardComponent(
           label: "Exemplo 4", 
-          page: LineExampleFourPage(),
+          page: LineFourPage(),
         ),
         CardComponent(
           label: "Exemplo 5", 
-          page: LineExampleFivePage(),
+          page: LineFivePage(),
         ),
         CardComponent(
           label: "Exemplo 6", 
-          page: LineExampleSixPage(),
+          page: LineSixPage(),
         ),
       ],
     );

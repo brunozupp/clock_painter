@@ -1,6 +1,6 @@
 import 'package:clock_painter/components/card_component.dart';
 import 'package:clock_painter/components/page_presentation_component.dart';
-import 'package:clock_painter/pages/polygon_examples/examples/polygon_example_one_page.dart';
+import 'package:clock_painter/pages/polygon_examples/examples/polygon_one_page.dart';
 import 'package:flutter/material.dart';
     
 class PolygonExamplesPage extends StatelessWidget {
@@ -14,7 +14,7 @@ class PolygonExamplesPage extends StatelessWidget {
       cards: [
         CardComponent(
           label: "Exemplo 1", 
-          page: PolygonExampleOnePage(),
+          page: PolygonOnePage(),
         ),
       ],
     );
