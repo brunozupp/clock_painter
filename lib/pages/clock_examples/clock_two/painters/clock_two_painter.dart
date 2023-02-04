@@ -67,16 +67,20 @@ class ClockTwoPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 
-    final hourHandX = centerX + 80 * cos((date.hour * 30 + date.minute * 0.5) * pi / 180);
-    final hourHandY = centerY + 80 * sin((date.hour * 30 + date.minute * 0.5) * pi / 180);
+    // Esse 80 = Distance you want the coordinate that you have to provide
+    // Pode-se dizer que esse 80 é o radius que vai ser aplicado para o tamanho da seta
+    final hourHandX = centerX + 50 * cos((date.hour * 30 + date.minute * 0.5) * pi / 180);
+    final hourHandY = centerY + 50 * sin((date.hour * 30 + date.minute * 0.5) * pi / 180);
     canvas.drawLine(center, Offset(hourHandX,hourHandY), hourHandBrush);
 
-    final minHandX = centerX + 80 * cos(date.minute * 6 * pi / 180);
-    final minHandY = centerY + 80 * sin(date.minute * 6 * pi / 180);
+    // Está fazendo * 6 para alinhar cada segundo/minuto com seu respectivo grau na circunferência
+    final minHandX = centerX + 65 * cos(date.minute * 6 * pi / 180);
+    final minHandY = centerY + 65 * sin(date.minute * 6 * pi / 180);
     canvas.drawLine(center, Offset(minHandX,minHandY), minHandBrush);
 
-    final secHandX = centerX + 80 * cos(date.second * 6 * pi / 180);
-    final secHandY = centerY + 80 * sin(date.second * 6 * pi / 180);
+    // Está fazendo * 6 para alinhar cada segundo/minuto com seu respectivo grau na circunferência
+    final secHandX = centerX + 85 * cos(date.second * 6 * pi / 180);
+    final secHandY = centerY + 85 * sin(date.second * 6 * pi / 180);
     canvas.drawLine(center, Offset(secHandX,secHandY), secHandBrush);
 
     final centerFillBrush = Paint()
