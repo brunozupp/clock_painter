@@ -7,12 +7,12 @@ class ClockTwoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF2D2F41),
       appBar: AppBar(
         title: const Text("Clock Two"),
       ),
       body: Container(
         alignment: Alignment.center,
-        color: Color(0xFF2D2F41),
         child: const ClockTwoWidget(),
       ),
     );

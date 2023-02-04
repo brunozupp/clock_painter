@@ -3,6 +3,15 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class ClockTwoPainter extends CustomPainter {
+
+  final DateTime date;
+
+  ClockTwoPainter({
+    required this.date,
+  });
+
+  // Vai 60 segundos para completar 360 graus -> 1 sec = 6 graus
+  // Vai 12 horas para completar 360 graus -> 1 hora = 30 graus -> 1 min -> 0.5 graus
   
   @override
   void paint(Canvas canvas, Size size) {
@@ -28,15 +37,13 @@ class ClockTwoPainter extends CustomPainter {
       ..color = Colors.orange[300]!
       ..strokeWidth = 8
       ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round;
-
-    canvas.drawLine(center, Offset(100,100), secHandBrush);
+      ..strokeCap = StrokeCap.round; 
 
     final minHandBrush = Paint()
       ..shader = const RadialGradient(
         colors: [
-          Colors.lightBlue,
-          Colors.pink,
+          Color(0xFF748EF6),
+          Color(0xFF77DDFF),
         ]
       ).createShader(Rect.fromCircle(
         center: center, 
@@ -45,14 +52,12 @@ class ClockTwoPainter extends CustomPainter {
       ..strokeWidth = 16
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
-
-    canvas.drawLine(center, Offset(150,100), minHandBrush);
 
     final hourHandBrush = Paint()
       ..shader = const RadialGradient(
         colors: [
-          Colors.lightBlue,
-          Colors.pink,
+          Color(0xFFEA74BA),
+          Color(0xFFC279FB),
         ]
       ).createShader(Rect.fromCircle(
         center: center, 
@@ -62,7 +67,17 @@ class ClockTwoPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 
-    canvas.drawLine(center, Offset(200,100), hourHandBrush);
+    final hourHandX = centerX + 80 * cos((date.hour * 30 + date.minute * 0.5) * pi / 180);
+    final hourHandY = centerY + 80 * sin((date.hour * 30 + date.minute * 0.5) * pi / 180);
+    canvas.drawLine(center, Offset(hourHandX,hourHandY), hourHandBrush);
+
+    final minHandX = centerX + 80 * cos(date.minute * 6 * pi / 180);
+    final minHandY = centerY + 80 * sin(date.minute * 6 * pi / 180);
+    canvas.drawLine(center, Offset(minHandX,minHandY), minHandBrush);
+
+    final secHandX = centerX + 80 * cos(date.second * 6 * pi / 180);
+    final secHandY = centerY + 80 * sin(date.second * 6 * pi / 180);
+    canvas.drawLine(center, Offset(secHandX,secHandY), secHandBrush);
 
     final centerFillBrush = Paint()
       ..color = const Color(0xFFEAECFF);
@@ -71,6 +86,6 @@ class ClockTwoPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
 
 }
