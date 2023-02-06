@@ -67,7 +67,7 @@ class ClockTwoPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 
-    // Esse 80 = Distance you want the coordinate that you have to provide
+    // Esse 50 = Distance you want the coordinate that you have to provide
     // Pode-se dizer que esse 80 é o radius que vai ser aplicado para o tamanho da seta
     // Está multiplicando com o minuto junto pois dessa forma não vai aumentar a hora
     // apenas quando passar de hora em hora, mas vai mudando o indicador regularmente
