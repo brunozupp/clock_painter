@@ -54,10 +54,12 @@ class _ClockTwoWidgetState extends State<ClockTwoWidget> {
           width: 300,
           height: 300,
           child: Transform.rotate(
-            angle: -pi / 2,
+            angle: (3 * pi) / 2,
+            // angle: -pi / 2,
             child: CustomPaint(
               painter: ClockTwoPainter(
-                date: currentTime,
+                //date: currentTime,
+                date: DateTime(2023,6,2,0,0,0),
               ),
             ),
           ),
