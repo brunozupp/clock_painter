@@ -1,9 +1,40 @@
+import 'dart:async';
+
 import 'package:clock_painter/pages/clock_examples/clock_three/widgets/clock_three_widget.dart';
 import 'package:flutter/material.dart';
 
-class ClockThreePage extends StatelessWidget {
+class ClockThreePage extends StatefulWidget {
 
   const ClockThreePage({ Key? key }) : super(key: key);
+
+  @override
+  State<ClockThreePage> createState() => _ClockThreePageState();
+}
+
+class _ClockThreePageState extends State<ClockThreePage> {
+
+  DateTime current = DateTime.now();
+
+  late Timer timer;
+
+  @override
+  void initState() {
+    super.initState();
+
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) { 
+      setState(() {
+        current = current.add(const Duration(seconds: 1));
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    
+    timer.cancel();
+
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +60,7 @@ class ClockThreePage extends StatelessWidget {
             ),
 
             Text(
-              _formatTime(DateTime.now()),
+              _formatTime(current),
               style: const TextStyle(
                 color: Colors.black87,
                 fontSize: 24,
@@ -41,7 +72,9 @@ class ClockThreePage extends StatelessWidget {
               height: 30,
             ),
 
-            const ClockThreeWidget(),
+            ClockThreeWidget(
+              date: current,
+            ),
           ],
         ),
       ),
