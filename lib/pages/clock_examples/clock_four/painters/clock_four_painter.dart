@@ -84,6 +84,12 @@ class ClockFourPainter extends CustomPainter {
       ..strokeWidth = 8
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
+    
+    final pointMinutePaint = Paint()
+      ..color = Colors.red
+      ..strokeWidth = 4
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round;
 
     for(int i = 0; i < 12; i++) {
       
@@ -99,6 +105,25 @@ class ClockFourPainter extends CustomPainter {
         Offset(pointX2, pointY2),
         pointHourPaint,
       );
+
+      // De 1 até 4 representando os minutos entre cada hora
+      for(int j = 1; j <= 4; j++) {
+        
+        // Fazendo o grau do minuto se locomover a cada iteração + o grau da hora
+        // para localizar o ponto de partida dos pontos de minuto que vão ser
+        // desenhados
+        final pointX1 = centerX + (radius - 20) * cos((j * 6 + i * 30) * pi / 180);
+        final pointY1 = centerY + (radius - 20) * sin((j * 6 + i * 30) * pi / 180);
+
+        final pointX2 = centerX + (radius - 30) * cos((j * 6 + i * 30) * pi / 180);
+        final pointY2 = centerY + (radius - 30) * sin((j * 6 + i * 30) * pi / 180);
+      
+        canvas.drawLine(
+          Offset(pointX1, pointY1),
+          Offset(pointX2, pointY2),
+          pointMinutePaint,
+        );
+      }
     }
   }
 

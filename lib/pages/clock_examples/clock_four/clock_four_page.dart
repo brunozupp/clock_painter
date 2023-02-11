@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:clock_painter/pages/clock_examples/clock_four/widgets/clock_four_widget.dart';
-import 'package:clock_painter/pages/clock_examples/clock_three/widgets/clock_three_widget.dart';
 import 'package:flutter/material.dart';
 
 class ClockFourPage extends StatefulWidget {
